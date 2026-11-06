@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Manya Jain — Portfolio</title>
+<meta name="description" content="Manya Jain: AI and product builder, brand-grower and professional over-thinker. Projects, experience, certificates, education and hobbies.">
+<meta property="og:title" content="Manya Jain — Portfolio">
+<meta property="og:description" content="AI products, brands built from scratch, and audiences grown from zero. Come in, the tour is free.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#E8ECFF;--ink:#16183A;--muted:#55597F;--coral:#FF5C8A;--acc:#B3114F;--mint:#8FEBCB;--rev-bg:#16183A;--rev-ink:#8FEBCB;--card:#F6F7FF;--line:rgba(22,24,58,.18);--display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;--text:"Newsreader",Georgia,"Times New Roman",serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14152E;--ink:#E8ECFF;--muted:#A3A8D6;--acc:#FF8FB0;--rev-bg:#E8ECFF;--rev-ink:#16183A;--card:#1D1F40;--line:rgba(232,236,255,.2)}}
+:root[data-theme="dark"]{--bg:#14152E;--ink:#E8ECFF;--muted:#A3A8D6;--acc:#FF8FB0;--rev-bg:#E8ECFF;--rev-ink:#16183A;--card:#1D1F40;--line:rgba(232,236,255,.2)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:1.15rem/1.6 var(--text);overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px;border-radius:6px}
+h1,h2,h3,h4{font-family:var(--display);margin:0;line-height:1.05}
+p{margin:0}
+.skip{position:absolute;left:12px;top:-90px;z-index:100;background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:99px;font-family:var(--display);font-weight:700;text-decoration:none;font-size:.95rem}
+.skip:focus{top:calc(env(safe-area-inset-top,0px) + 12px)}
+#bar{position:fixed;left:0;top:0;height:4px;width:100%;background:var(--coral);transform-origin:0 50%;transform:scaleX(0);z-index:90}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:49}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:calc(env(safe-area-inset-top,0px) + 12px) clamp(14px,3.5vw,40px) 12px;font-family:var(--display);font-weight:700;font-size:.96rem;pointer-events:none}
+nav>*{pointer-events:auto}
+.logo{text-decoration:none;font-size:1.25rem;letter-spacing:-.02em;background:color-mix(in srgb,var(--bg) 78%,transparent);backdrop-filter:blur(10px);padding:6px 14px;border-radius:99px}
+.links{display:flex;gap:2px;padding:5px;border-radius:99px;background:color-mix(in srgb,var(--bg) 78%,transparent);backdrop-filter:blur(10px)}
+.links a{text-decoration:none;padding:6px 12px;border-radius:99px;transition:background .25s,color .25s}
+.links a:hover{background:color-mix(in srgb,var(--coral) 28%,transparent)}
+.links a[aria-current="page"]{background:var(--ink);color:var(--bg)}
+.navr{display:flex;gap:8px;align-items:center}
+.pill{font:inherit;font-size:.85rem;font-weight:700;background:color-mix(in srgb,var(--bg) 78%,transparent);backdrop-filter:blur(10px);border:1.5px solid var(--line);border-radius:99px;padding:7px 13px;color:var(--ink);cursor:pointer}
+.burger{display:none}
+.menu{position:fixed;inset:0;z-index:48;background:var(--bg);display:none;flex-direction:column;justify-content:center;gap:4px;padding:90px clamp(20px,6vw,60px) 40px;overflow:auto}
+.menu.open{display:flex}
+.menu a{font-family:var(--display);font-weight:800;font-size:clamp(2rem,9vw,3.4rem);letter-spacing:-.03em;text-decoration:none;line-height:1.15}
+.menu a[aria-current="page"]{color:var(--acc)}
+@media (max-width:1060px){.links{display:none}.burger{display:inline-block}}
+@media (max-width:420px){.pill.calm{display:none}}
+#wipe{position:fixed;inset:0;z-index:95;background:var(--coral);transform:translateY(101%);pointer-events:none}
+/* cursor + glow */
+#dot,#ring{position:fixed;left:0;top:0;pointer-events:none;z-index:70;border-radius:50%;opacity:0;transition:opacity .3s}
+#dot{width:8px;height:8px;background:var(--coral);margin:-4px 0 0 -4px}
+#ring{width:38px;height:38px;border:2px solid var(--coral);margin:-19px 0 0 -19px;transition:width .25s,height .25s,margin .25s,background .25s,opacity .3s}
+#ring.big{width:72px;height:72px;margin:-36px 0 0 -36px;background:color-mix(in srgb,var(--coral) 18%,transparent)}
+#glow{position:fixed;left:0;top:0;width:44vmax;height:44vmax;margin:-22vmax 0 0 -22vmax;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--coral) 45%,transparent),color-mix(in srgb,var(--mint) 30%,transparent) 45%,transparent 70%);filter:blur(30px);opacity:.45;pointer-events:none;z-index:0}
+main,footer{position:relative;z-index:1}
+@media (pointer:coarse){#dot,#ring{display:none}}
+[data-calm] #dot,[data-calm] #ring,[data-calm] #glow{display:none!important}
+/* pages */
+.page{display:none}
+.page.on{display:block;animation:pin .6s both}
+@keyframes pin{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+.sec{padding:clamp(48px,9vh,110px) 0}
+.rv{opacity:1;transform:none}
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}
+.js .rv.in{opacity:1;transform:none}
+.ph{padding:clamp(110px,18vh,170px) 0 clamp(20px,4vh,44px)}
+.ph h1{font-size:clamp(2.6rem,9vw,7.5rem);letter-spacing:-.045em;line-height:.95}
+.ph p{max-width:46ch;color:var(--muted);margin-top:18px;font-size:1.25rem}
+.lab{font-family:var(--display);font-weight:700;font-size:1rem;color:var(--muted);margin:0 0 20px}
+.org{font-family:var(--display);font-weight:700;color:var(--acc)}
+.when{font-family:var(--display);font-size:.88rem;color:var(--muted)}
+.btn{display:inline-block;font-family:var(--display);font-weight:700;font-size:1rem;text-decoration:none;background:var(--ink);color:var(--bg);padding:13px 24px;border:2px solid var(--ink);border-radius:99px;cursor:pointer;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.alt{background:transparent;color:var(--ink)}
+.res{border-left:3px solid var(--coral);padding-left:12px;font-family:var(--display);font-weight:700;font-size:1rem;line-height:1.35}
+.tg{display:flex;flex-wrap:wrap;gap:7px}
+.tg span{font-family:var(--display);font-size:.82rem;padding:3px 11px;border:1px solid var(--ink);border-radius:99px}
+/* hero */
+#hero{position:relative;min-height:100svh;display:grid;touch-action:pan-y;overflow:hidden;cursor:none}
+@media (pointer:coarse){#hero{cursor:auto}}
+[data-calm] #hero{cursor:auto}
+.layer{grid-area:1/1;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(96px,15vh,150px) clamp(16px,4vw,48px) clamp(34px,7vh,72px)}
+.layer h1{font-size:clamp(3.8rem,19.5vw,17rem);font-weight:800;letter-spacing:-.05em;line-height:.82;margin-left:-.04em}
+.layer .sub{font-family:var(--display);font-size:clamp(1.05rem,2.4vw,1.7rem);margin-top:clamp(16px,3vh,30px);max-width:32ch;line-height:1.25}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.reveal{background:var(--rev-bg);color:var(--rev-ink);clip-path:circle(var(--r,0px) at var(--x,50%) var(--y,50%));pointer-events:none;user-select:none}
+.reveal .btn{background:var(--rev-ink);color:var(--rev-bg);border-color:var(--rev-ink)}
+.hint{position:absolute;right:clamp(16px,4vw,48px);bottom:clamp(34px,7vh,72px);font-family:var(--display);font-size:.92rem;color:var(--muted);text-align:right;max-width:18ch}
+/* proof */
+.proof{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:14px}
+.tile{background:var(--ink);color:var(--bg);border-radius:26px;padding:clamp(20px,3vw,30px);display:flex;flex-direction:column;gap:8px}
+.tile .num{font-family:var(--display);font-weight:800;font-size:clamp(2.8rem,6vw,4.4rem);letter-spacing:-.04em;line-height:1;color:var(--mint)}
+.tile b{font-family:var(--display);font-size:1.05rem}
+.tile small{font-size:.98rem;opacity:.85;line-height:1.35}
+.tile .t{align-self:flex-start;font-family:var(--display);font-size:.82rem;font-weight:700;background:var(--coral);color:#16183A;padding:3px 11px;border-radius:99px}
+/* story */
+.stmt{font-family:var(--display);font-weight:700;font-size:clamp(1.8rem,5vw,4.2rem);line-height:1.1;letter-spacing:-.025em;max-width:24ch}
+.stmt .w{opacity:.2;transition:opacity .25s}
+.stmt .w.on{opacity:1}
+.tl{position:relative;margin:clamp(40px,8vh,90px) 0 0;padding-left:clamp(22px,4vw,44px);max-width:820px}
+.tl::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:3px;background:linear-gradient(var(--coral),var(--mint));border-radius:3px}
+.chap{position:relative;padding-bottom:clamp(28px,5vh,52px)}
+.chap::before{content:"";position:absolute;left:calc(-1*clamp(22px,4vw,44px) - 2px);top:8px;width:15px;height:15px;border-radius:50%;background:var(--coral);border:3px solid var(--bg)}
+.chap h3{font-size:clamp(1.4rem,3vw,2rem);letter-spacing:-.02em;margin:4px 0 8px}
+.hub{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:14px}
+.hub a{text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;display:flex;flex-direction:column;gap:8px;min-height:170px;justify-content:space-between;transition:border-color .25s,background .25s}
+.hub a:hover{border-color:var(--coral)}
+.hub h3{font-size:1.6rem;letter-spacing:-.02em}
+.hub p{color:var(--muted);font-size:1.02rem;line-height:1.4}
+.hub .go{font-family:var(--display);font-weight:700;color:var(--acc)}
+.tilt{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .2s ease-out,border-color .25s,background .25s}
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px;align-items:center}
+.chips button{font-family:var(--display);font-size:.9rem;font-weight:700;border:1.5px solid var(--ink);background:transparent;color:var(--ink);border-radius:99px;padding:5px 13px;cursor:pointer}
+.chips button[aria-pressed="true"]{background:var(--coral);border-color:var(--coral);color:#16183A}
+.chips .cnt{font-family:var(--display);font-size:.88rem;color:var(--muted);margin-left:6px}
+/* projects */
+.plist{display:flex;flex-direction:column;gap:18px}
+.plist.swap{animation:pin .5s both}
+.prow{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(14px,3vw,36px);background:var(--card);border:1px solid var(--line);border-radius:30px;padding:clamp(14px,2.2vw,24px);align-items:start}
+.art svg{width:100%;height:auto;display:block;border-radius:22px}
+.pb h3{font-size:clamp(1.7rem,3.4vw,2.6rem);letter-spacing:-.03em;margin:4px 0 10px}
+.pb .lead{margin-bottom:12px}
+.more-d{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s}
+.prow.open .more-d{grid-template-rows:1fr}
+.more-d>div{overflow:hidden}
+.dl{display:grid;gap:12px;padding:16px 0 4px}
+.dl h4{font-size:.85rem;color:var(--muted);margin-bottom:2px}
+.pb .btn{margin-top:14px;padding:9px 20px;font-size:.95rem}
+.pnav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:26px;font-family:var(--display);font-weight:700}
+.pnav button{width:52px;height:52px;border-radius:50%;border:2px solid var(--ink);background:var(--card);color:var(--ink);font-size:1.4rem;cursor:pointer;transition:transform .2s,background .2s}
+.pnav button:hover:not(:disabled){background:var(--coral);transform:scale(1.08)}
+.pnav button:disabled{opacity:.3;cursor:default}
+@media (max-width:760px){.prow{grid-template-columns:1fr}}
+/* experience */
+.xl{display:flex;flex-direction:column;gap:16px}
+.xc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.7fr);gap:10px clamp(16px,4vw,48px);background:var(--card);border:1px solid var(--line);border-radius:28px;padding:clamp(18px,3vw,30px)}
+.xc h3{font-size:clamp(1.3rem,2.8vw,1.9rem);letter-spacing:-.02em;margin-bottom:6px}
+.xc .org,.xc .when{display:block}
+.xc ul{margin:0 0 12px;padding-left:1.1em}
+.xc li{margin-bottom:6px;line-height:1.45;font-size:1.08rem}
+@media (max-width:760px){.xc{grid-template-columns:1fr}}
+/* certs */
+.cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:14px}
+.cc{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:8px}
+.cc h3{font-size:1.25rem;letter-spacing:-.01em}
+.cc p{font-size:1.02rem;line-height:1.45}
+.cc .tg{margin-top:auto;padding-top:6px}
+/* education */
+.el{display:flex;flex-direction:column;gap:18px}
+.ec{background:var(--card);border:1px solid var(--line);border-radius:30px;padding:clamp(20px,3.4vw,38px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:14px clamp(18px,4vw,56px)}
+.ec h3{font-size:clamp(1.6rem,3.4vw,2.5rem);letter-spacing:-.03em;margin-bottom:6px}
+.ec h4{font-size:.85rem;color:var(--muted);margin:14px 0 4px}
+.ec h4:first-child{margin-top:0}
+@media (max-width:760px){.ec{grid-template-columns:1fr}}
+/* hobbies */
+.hg{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+.hc{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:clamp(20px,3vw,30px);display:flex;flex-direction:column;gap:10px}
+.hc.big{grid-column:1/-1;background:var(--ink);color:var(--bg)}
+.hc.big .tg span{border-color:var(--bg)}
+.hc h3{font-size:clamp(1.5rem,3vw,2.3rem);letter-spacing:-.03em}
+.hc.big h3{font-size:clamp(2rem,5vw,3.6rem)}
+.hc .tg span{transition:transform .25s,background .25s}
+.hc .tg span:hover{transform:rotate(-4deg) scale(1.08);background:var(--coral);color:#16183A;border-color:var(--coral)}
+.shows{display:grid;gap:12px;margin-top:4px}
+.shows b{font-family:var(--display)}
+/* contact */
+.cgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(20px,4vw,56px);align-items:start}
+.ci{display:flex;flex-direction:column;gap:18px}
+.ci a{font-family:var(--display);font-weight:700;font-size:clamp(1.2rem,2.6vw,1.7rem);letter-spacing:-.02em;word-break:break-word}
+.ci small{display:block;font-family:var(--display);font-size:.85rem;color:var(--muted);font-weight:700}
+.fm{background:var(--card);border:1px solid var(--line);border-radius:30px;padding:clamp(20px,3.4vw,36px);display:flex;flex-direction:column;gap:14px}
+.fm label{font-family:var(--display);font-weight:700;font-size:.9rem;display:flex;flex-direction:column;gap:6px}
+.fm input,.fm textarea{font:inherit;font-size:1.05rem;padding:12px 14px;border-radius:14px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink)}
+.fm textarea{min-height:140px;resize:vertical}
+.fm .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.fm .msg{font-family:var(--display);font-size:.92rem;color:var(--acc);min-height:1.2em}
+@media (max-width:820px){.cgrid{grid-template-columns:1fr}}
+footer{padding:36px clamp(16px,4vw,48px) 48px;font-size:.98rem;color:var(--muted);text-align:center}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.page.on,.plist.swap{animation:none}.js .rv{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#home" id="skip">Skip the small talk, take me to the good stuff</a>
+<div id="bar"></div><div id="glow"></div><div id="dot"></div><div id="ring"></div><div id="wipe"></div>
+<nav aria-label="Main">
+  <a class="logo" href="#home" data-hover>Manya Jain</a>
+  <div class="links" id="links"></div>
+  <div class="navr"><button type="button" class="pill calm" id="calm" data-hover></button><button type="button" class="pill burger" id="burger" aria-expanded="false" data-hover>Menu</button></div>
+</nav>
+<div class="menu" id="menu"></div>
+
+<main id="main" tabindex="-1">
+<!-- HOME -->
+<div class="page" id="p-home">
+  <header id="hero" aria-label="Introduction">
+    <div class="layer"><h1>Manya<br>Jain</h1><p class="sub">AI builder, brand-grower and professional over-thinker (the useful kind).</p><div class="ctas"><a class="btn" href="#story" id="toStory" data-hover>Read my story</a><a class="btn alt" href="#contact" data-hover>Say hi</a></div><span class="hint" id="hint">move your pointer around, the page has a secret</span></div>
+    <div class="layer reveal" id="rev" aria-hidden="true"><h1>Manya<br>Jain</h1><p class="sub">Plot twist: my 25+ AI tools pulled in 2.7K users in five days.</p><div class="ctas"><span class="btn">Read my story</span><span class="btn">Say hi</span></div></div>
+  </header>
+  <section class="sec after"><div class="wrap">
+    <p class="lab">The numbers (yes, I counted)</p>
+    <div class="proof" id="proof"></div>
+  </div></section>
+  <section class="sec" id="story"><div class="wrap">
+    <p class="lab">About me</p>
+    <p class="stmt" id="stmt"></p>
+    <div class="ctas rv"><a class="btn alt" id="liBtn" target="_blank" rel="noopener" data-hover>Read the unabridged version on LinkedIn ↗</a></div>
+    <div class="tl" id="tl"></div>
+  </div></section>
+  <section class="sec"><div class="wrap">
+    <p class="lab">Pick your own adventure</p>
+    <div class="hub" id="hub"></div>
+  </div></section>
+</div>
+<!-- PROJECTS -->
+<div class="page" id="p-projects"><div class="wrap">
+  <div class="ph"><h1>Things I built</h1><p>My proudest experiments. No lab coats, mostly no-code, always curious.</p></div>
+  <div class="after"></div>
+  <div class="plist" id="plist"></div>
+  <div class="pnav" id="pnav"></div>
+</div></div>
+<!-- EXPERIENCE -->
+<div class="page" id="p-experience"><div class="wrap">
+  <div class="ph"><h1>Where I’ve worked</h1><p>Internships, freelance gigs and one very busy campus. Tap a skill to see who did what.</p></div>
+  <div class="after"></div>
+  <div class="chips" id="xchips"></div>
+  <div class="xl" id="xl"></div>
+</div></div>
+<!-- CERTIFICATES -->
+<div class="page" id="p-certifications"><div class="wrap">
+  <div class="ph"><h1>The certificate shelf</h1><p>Yes, it has its own page. No, I’m not sorry.</p></div>
+  <div class="after"></div>
+  <div class="chips" id="cchips"></div>
+  <div class="cg" id="cg"></div>
+</div></div>
+<!-- EDUCATION -->
+<div class="page" id="p-education"><div class="wrap">
+  <div class="ph"><h1>School of life (and actual school)</h1><p>Two degrees at once, because one syllabus was clearly not enough.</p></div>
+  <div class="after"></div>
+  <div class="el" id="el"></div>
+</div></div>
+<!-- HOBBIES -->
+<div class="page" id="p-hobbies"><div class="wrap">
+  <div class="ph"><h1>When I’m not building stuff</h1><p>Spoiler: I’m still building stuff. In my head. Mostly business ideas.</p></div>
+  <div class="after"></div>
+  <div class="hg" id="hg"></div>
+</div></div>
+<!-- CONTACT -->
+<div class="page" id="p-contact"><div class="wrap">
+  <div class="ph"><h1>Say hi</h1><p>Got an idea, a project or a problem that needs solving? Tell me. I come with enthusiasm and a ridiculous number of browser tabs.</p></div>
+  <div class="after"></div>
+  <div class="cgrid">
+    <div class="ci rv"><div><small>Email</small><a id="mailA" data-hover></a></div><div><small>LinkedIn</small><a id="liA" target="_blank" rel="noopener" data-hover>linkedin.com/in/manya-j</a></div><div><small>Based in</small><span class="stmt" style="font-size:clamp(1.4rem,3vw,2rem)" id="loc"></span></div></div>
+    <div class="fm rv" id="fm"><label>Your name<input id="fn" autocomplete="name"></label><label>Your email<input id="fe" type="email" autocomplete="email"></label><label>What’s on your mind?<textarea id="ft"></textarea></label>
+      <div class="row"><button type="button" class="btn" id="send" data-hover>Open my email app</button><button type="button" class="btn alt" id="copy" data-hover>Copy my email instead</button></div><p class="msg" id="msg" role="status"></p></div>
+  </div>
+</div></div>
+</main>
+<footer>© <span id="yr"></span> Manya Jain. Made with caffeine, curiosity and an unreasonable number of tabs open.</footer>
+
+<script>
+document.documentElement.classList.add("js");
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const ME={email:"manyajain3690@gmail.com",li:"https://www.linkedin.com/in/manya-j",loc:"Gurugram, Haryana, India"};
+const SKN={social:"Social media",brand:"Brand design",ai:"AI products",lead:"Leadership",write:"Content writing",video:"Video",dev:"Development",biz:"Business and finance",data:"Data",web3:"Web3",sales:"Sales"};
+const PAGES=[["home","Home"],["projects","Projects"],["experience","Experience"],["certifications","Certificates"],["education","Education"],["hobbies","Hobbies"],["contact","Contact"]];
+
+const PROOF=[
+ {n:2.7,d:1,s:"K+",b:"Mintona users",small:"Plus 400K+ views of the tool dashboards. People really clicked.",t:"First 5 days"},
+ {n:50,d:0,s:"K+",b:"Views on Khaadwaad’s Instagram",small:"Built from zero, with daily posting.",t:"About 1.5 months"},
+ {n:40,d:0,s:"K+",b:"Views and impressions, NSS camp",small:"Videography, photos and content for the whole camp.",t:"7-day camp"},
+ {n:8.9,d:1,s:"M",b:"Views on one YouTube video",small:"From a channel that hit nearly 400 subscribers in 30 days.",t:"One video"}
+];
+const STORY=[
+ ["2021 – 2022","Chapter 1: The school-days experiment","While still in school, I started a YouTube channel about creative tech and the freelance economy, to see if attention could be earned on purpose. It could: nearly 400 subscribers in 30 days, and one video that hit 8.9M views."],
+ ["2023 – 2024","Chapter 2: Clients, apparently","I took my design and strategy skills freelance on Fiverr and turned the theory from my certifications into paid work. Nothing teaches faster than a client with a deadline."],
+ ["2023 – 2024","Chapter 3: Campus chaos (the good kind)","I became a campus ambassador for Nykaa and IMUNA and raised funds for Muskurahat Foundation, beating the target by about 10%. As an Internshala Student Partner I referred 15 successful applications at about ₹500 each. Sales, basically, with a friendlier name."],
+ ["2024","Chapter 4: Two degrees, because why not","I started a BCA and a BBA in FinTech and Foreign Exchange at the same time, because tech without business is a hobby and business without tech is slow. Internships followed: marketing, web development, testing and a lot of writing for causes I care about."],
+ ["2024 – now","Chapter 5: Brands from scratch","Homemade Goodness, my aunt’s food business, needed a proper brand, so I built one from the logo to the packaging. Then came Chakram Local and Khaadwaad, with the same goal: make people notice, and remember."],
+ ["2025 – now","Chapter 6: Enter AI","I built Mintona so content creators with no or basic experience could use AI tools too. I co-built Nexus OS with Google for Startups × Scaler, won 1st rank at Excelerate × RIT, and joined SheFi, McKinsey Forward and Goldman Sachs 10,000 Women as a scholar. Why? Because I learn by actually doing things, and I like building things people really use."],
+ ["Next","What’s next?","Whatever’s next. Tell me about it."]
+];
+const HUB=[["projects","Projects","The things I built, with the story behind each."],["experience","Experience","Brands, internships and one very busy campus."],["certifications","Certificates","The shelf. It’s a big shelf."],["education","Education","Two degrees, one school story."],["hobbies","Hobbies","Athletics, music and detective-mode binges."],["contact","Contact","Say hi. I promise the form is friendly."]];
+
+const PROJ=[
+ {h:335,art:"mintona",t:"Mintona",w:"Nov 2025 – present",tags:["AI product","No-code"],lead:"A collection of 25+ AI-powered tools in one product, made so content creators with no or basic experience can use AI too.",
+  d:[["Why I built it","Creators with little or no experience should be able to use AI tools without a learning curve."],["What I did","Built 25+ AI-powered tools with There’s An AI For That and brought them together into a single product experience."],["Result","2.7K+ users and 400K+ views of the tool dashboards (impressions, not unique users) in the first five days."],["What I learned","AI product development, product ideation, user behaviour and iteration, all hands-on."]]},
+ {h:160,art:"edupath",t:"EduPath AI Pro",w:"AI career guidance platform",tags:["AI","Product"],lead:"An AI-powered platform that helps people make more informed education and career decisions.",
+  d:[["The problem","Choosing a course or career is a big decision, and most people make it with too little information."],["What I did","Worked across the product end to end, combining AI functionality, user-focused problem solving and product development."]]},
+ {h:255,art:"nexus",t:"Nexus OS",w:"2025 · Google for Startups × Scaler Startup School",tags:["AI","Startup"],lead:"A co-built AI productivity and note-taking concept that turns information into actionable knowledge.",
+  d:[["The problem","Notes pile up, and knowledge rarely turns into action."],["What I did","Co-built the concept as part of the Google for Startups × Scaler Startup School program."],["What I learned","How AI applications, product development and startup problem solving fit together in a structured program."]]},
+ {h:45,art:"theory",t:"Theory to Impact",w:"Sep – Nov 2025 · Excelerate × RIT",tags:["Sustainability","Business"],lead:"My entry for the From Theory to Impact Challenge: a digital solution that creates real-world sustainability impact.",
+  d:[["The idea","Digital growth and a healthier planet shouldn’t be a trade-off. The project sat at the intersection of technology and sustainability."],["What I did","Turned the idea into a viable business model, moving from theory to a plan that could work in practice."],["Result","Secured 1st rank, with a Certificate of Achievement."]]}
+];
+const ART={
+ mintona(){let t="";for(let j=0;j<3;j++)for(let i=0;i<4;i++){const hot=(i+j*4)%5===1;t+=`<rect x="${34+i*84}" y="${44+j*62}" width="70" height="48" rx="12" style="fill:${hot?"var(--coral)":"var(--ink)"}"/><circle cx="${69+i*84}" cy="${68+j*62}" r="8" style="fill:${hot?"#fff":"var(--mint)"}"/>`}return t+`<path d="M356 20l5 13 13 5-13 5-5 13-5-13-13-5 13-5z" style="fill:var(--ink)"/>`},
+ edupath(){return `<path d="M30 220C120 220 90 150 170 150S250 190 300 120 330 110 340 100" fill="none" style="stroke:var(--ink)" stroke-width="5" stroke-dasharray="2 12" stroke-linecap="round"/>`+[[30,220],[170,150],[300,120]].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="11" style="fill:var(--coral)"/>`).join("")+`<polygon points="300,62 345,42 390,62 345,82" style="fill:var(--ink)"/><path d="M322 74v20c0 9 46 9 46 0V74" style="fill:var(--ink)"/>`},
+ nexus(){const n=[[90,64],[310,64],[90,196],[310,196],[200,34],[200,226]];return n.map(p=>`<line x1="200" y1="130" x2="${p[0]}" y2="${p[1]}" style="stroke:var(--ink)" stroke-width="3"/>`).join("")+n.map((p,i)=>`<circle cx="${p[0]}" cy="${p[1]}" r="${i<4?15:11}" style="fill:${i%2?"var(--coral)":"var(--ink)"}"/>`).join("")+`<rect x="168" y="96" width="64" height="68" rx="12" style="fill:var(--mint)"/><path d="M182 118h36M182 132h36M182 146h22" style="stroke:var(--ink)" stroke-width="5" stroke-linecap="round"/>`},
+ theory(){return `<circle cx="140" cy="112" r="64" style="fill:#fff"/><path d="M140 150c-26-8-36-36-22-58 30 0 50 22 44 52z" style="fill:var(--mint)"/><path d="M140 150c2-20 10-36 24-48" fill="none" style="stroke:var(--ink)" stroke-width="4" stroke-linecap="round"/><rect x="116" y="178" width="48" height="16" rx="6" style="fill:var(--ink)"/><rect x="124" y="198" width="32" height="12" rx="6" style="fill:var(--ink)"/>`+[[250,60],[290,95],[330,130]].map(p=>`<rect x="${p[0]}" y="${232-p[1]}" width="30" height="${p[1]}" rx="6" style="fill:var(--ink)"/>`).join("")+`<path d="M246 110l50-40 20 16 40-44" fill="none" style="stroke:var(--coral)" stroke-width="6" stroke-linecap="round"/>`}
+};
+const artSvg=(p)=>`<svg viewBox="0 0 400 260" role="img" aria-label="Illustration for ${p.t}"><rect width="400" height="260" rx="24" style="fill:hsl(${p.h} 90% 86%)"/>${ART[p.art]()}</svg>`;
+
+const EXP=[
+ {p:"social",s:["video","brand","lead"],role:"NSS Volunteer and Social Media Head",org:"National Service Scheme, Gurugram University",kind:"Volunteer · on-site",w:"Apr 2025 – present",l:["Named Best NSS Volunteer at the college.","At the volunteership camp: videography, photography, and creating and designing content, including daily clips for 55+ volunteers on mental health, women empowerment and CPR training, plus live sessions I hosted.","Now, as the Head: leading social media management for the unit."],r:"40K+ views and impressions in the 7-day camp."},
+ {p:"brand",s:["biz"],role:"Chief Brand Officer",org:"Homemade Goodness (my aunt’s business)",kind:"Part-time · hybrid",w:"May 2024 – present",l:["Turned a kitchen-table food idea into a proper D2C brand.","Built the brand architecture from zero and designed everything from the logo to the packaging.","Provides creative direction whenever the business is ready to scale."],r:"A cohesive, premium identity to match how good the food tastes."},
+ {p:"social",s:["write","brand"],role:"Social Media Marketing Intern",org:"NatureNest Organics Pvt Ltd · brand: Khaadwaad",kind:"Part-time, 4–5 hours a day · remote",w:"Aug – Oct 2026",l:["Built Khaadwaad’s Instagram presence from the ground up.","Planned and ran educational, product-focused and engagement-driven content for a consumer brand.","Worked across social media, e-commerce, content planning and brand positioning."],r:"160+ followers and 50K+ views in about 1.5 months of consistent daily posting."},
+ {p:"brand",s:["social"],role:"Freelance Social Media and Brand Designer",org:"New Ton Ingot Pvt Ltd · brand: Chakram Local",kind:"Freelance, part-time · remote",w:"Jul – Sep 2026",l:["Independently designed the brand’s logo and product label/pamphlet, turning business requirements into visual assets.","Supported social media execution and contributed to creative decisions across its digital presence."],r:"Delivered the brand’s core visual identity."},
+ {p:"sales",s:["lead"],role:"Student Partner (campus ambassador and sales)",org:"Internshala",kind:"Performance-based · remote",w:"May – Jul 2024",l:["A performance-based role that mixed campus ambassador work with sales."],r:"15 successful referrals, earning about ₹500 on each."},
+ {p:"video",s:["social"],role:"Content Creator",org:"YouTube (self-run channel)",kind:"Self-employed",w:"Apr 2021 – May 2022",l:["Launched and grew a niche channel on creative tech and the freelance economy while still in school.","Used viral growth strategies, trend analysis and affiliate marketing, and made tutorials on freelancing and graphic design."],r:"0 to nearly 400 subscribers in 30 days, and one video that reached 8.9M views."},
+ {p:"brand",s:["video"],role:"Freelancer",org:"Fiverr",kind:"Freelance · remote",w:"Aug 2023 – Oct 2024",l:["Handled graphic design, video editing and strategic consulting for brands and individuals.","Turned the theory from my certifications into paid client work."],r:"A year and three months of real client work."},
+ {p:"dev",s:[],role:"Software Engineer Intern",org:"Saiket Systems",kind:"Internship · remote",w:"Oct – Nov 2025",l:["Worked with REST APIs, Git and collaborative workflows.","Read existing code, identified issues and implemented updates."],r:"Practical debugging and delivery experience, and a Software Development Internship Certificate."},
+ {p:"social",s:["brand","video","dev"],role:"Digital Marketing and Content Specialist",org:"TalentGro Global",kind:"Internship · remote",w:"Aug – Dec 2024",l:["Handled graphic design, web development, video editing, digital marketing and sales tasks.","Designed website pages and visual media, and supported campaigns and audience outreach programs."],r:"An internship certificate and hands-on range across design, web and marketing."},
+ {p:"write",s:[],role:"Content Writer",org:"Earth5r, Marpu Foundation and Pawzz",kind:"Internships · remote",w:"2024 – 2025",l:["Earth5r: turned complex climate topics, like waste management, into SEO-led guides people can act on.","Marpu Foundation: wrote about sustainable development for an NGO and used SEO to make its work easier to find.","Pawzz: wrote about animal welfare to connect the cause with digital audiences."],r:"A voice that feels human and moves readers to care, while keeping complex topics accurate."},
+ {p:"dev",s:[],role:"Web Developer Intern",org:"InnovaGrid Inc",kind:"Internship · remote",w:"Jul – Oct 2025",l:["Maintained WordPress sites, handling minor updates and bug fixes.","Documented parts of the site architecture to understand how its pieces and deployment workflow fit together."]},
+ {p:"dev",s:[],role:"Technical and Functional Tester",org:"PRAM Educate IT Software LLP",kind:"Internship",w:"Jan – Mar 2026",l:["Internship in technical and functional testing for a mobile application."],r:"Pram Edu Mobile Application Internship Certificate, recognised by DPIIT, Government of India."},
+ {p:"lead",s:["social"],role:"Fundraising Intern",org:"Muskurahat Foundation",kind:"Internship",w:"Apr – Aug 2024",l:["Used organic marketing and social media to spread awareness of the cause and reach fundraising targets."],r:"Hit the target, plus about 10%."},
+ {p:"lead",s:["social"],role:"Campus Ambassador",org:"Nykaa and IMUNA (International Model United Nations Association)",kind:"Ambassador roles",w:"2023",l:["IMUNA: promoted Model UN conferences and awareness of global challenges on campus.","Nykaa: represented the brand on campus."]}
+];
+const CERT=[
+ {p:"biz",s:["lead"],t:"10,000 Women",o:"Goldman Sachs",w:"Jan 2026",ov:"Built a five-year roadmap and a business growth plan for a future venture, as part of a global sisterhood of women entrepreneurs.",k:["Leadership","Strategic planning"]},
+ {p:"web3",s:[],t:"SheFi Scholar",o:"SheFi",w:"Sep – Dec 2025",ov:"Learned how Web3 works on-chain: L1s, L2s and the security frameworks behind decentralized systems, and where they meet AI and data.",k:["Web3","Blockchain","Community engagement"]},
+ {p:"lead",s:["biz"],t:"Forward Learner Scholar",o:"McKinsey & Company",w:"Aug – Dec 2025",ov:"Learned structured problem solving to break messy challenges into clear actions, plus adaptability and emotional intelligence.",k:["Problem solving","Soft skills"]},
+ {p:"ai",s:["biz"],t:"Startup School",o:"Google for Startups × Scaler",w:"2025",ov:"Co-built Nexus OS during the program.",k:[]},
+ {p:"biz",s:["ai"],t:"From Theory to Impact Challenge",o:"Excelerate",w:"Nov 2025",ov:"Certificate of Achievement for securing 1st place.",k:["Sustainable development","Problem solving"]},
+ {p:"data",s:["ai"],t:"SQL Analytics, AI/BI and Generative AI",o:"Databricks",w:"Oct 2025",ov:"",k:["SQL analytics","AI/BI","Generative AI"]},
+ {p:"data",s:["social"],t:"Google Analytics",o:"Google Digital Academy (Skillshop)",w:"Oct 2025",ov:"",k:["Google Analytics"]},
+ {p:"social",s:["write"],t:"Social Media Marketing",o:"Semrush",w:"Oct 2025",ov:"",k:["Social media marketing","Digital marketing"]},
+ {p:"biz",s:[],t:"Business Plan Development",o:"Harvard",w:"Aug 2024",ov:"",k:["Business management","Business intelligence"]},
+ {p:"biz",s:[],t:"A2Z of Finance",o:"Elearnmarkets",w:"Jan 2026",ov:"",k:["Finance"]},
+ {p:"brand",s:["biz"],t:"Inside LVMH",o:"LVMH",w:"Nov 2025",ov:"",k:["Branding","Supply chain management"]},
+ {p:"dev",s:[],t:"IoT, Wireless and Cloud Computing",o:"Yonsei University",w:"Jul 2025",ov:"",k:["Internet of Things","Cloud computing"]},
+ {p:"lead",s:["brand"],t:"IBM Skills Build",o:"IBM",w:"Sep 2024",ov:"Design thinking, interpersonal skills and professional skills.",k:["Design thinking","Presentation skills","Critical thinking"]},
+ {p:"ai",s:["social"],t:"AI for Development",o:"Atingi",w:"Mar 2024",ov:"Managing and evaluating AI projects, plus digital and social media marketing.",k:["AI projects","Digital marketing"]},
+ {p:"web3",s:["biz"],t:"Accredited Blockchain for Business",o:"365 Financial Analyst",w:"Nov 2025",ov:"",k:["Web3","Blockchain"]},
+ {p:"ai",s:[],t:"AI for Work and Life",o:"University of North Florida",w:"Nov 2025",ov:"",k:["Artificial intelligence"]},
+ {p:"brand",s:[],t:"Introduction to Photoshop",o:"LearnTubeas",w:"Oct 2024",ov:"",k:["Design","Photoshop"]},
+ {p:"ai",s:["brand"],t:"Mastering AI with ChatGPT and Canva Made Easy",o:"Bizgurukul",w:"Oct 2024",ov:"",k:["ChatGPT","AI","Canva"]},
+ {p:"lead",s:[],t:"Build and Update Your Professional Presence",o:"SueMentors",w:"Oct 2025",ov:"",k:["Professional skills"]}
+];
+const EDU=[
+ {t:"BBA, FinTech and Foreign Exchange",o:"Chandigarh University",w:"2024 – 2027",sub:"Business administration and management, with a FinTech and foreign exchange specialization.",like:"Financial markets, entrepreneurship, business strategy and emerging financial technologies, basically anything that makes me open one more tab. It’s where my business-brain gets fed."},
+ {t:"BCA, Computer Applications",o:"Gurugram University",w:"2024 – 2027",sub:"Computer science coursework with hands-on exposure to programming, object-oriented programming, data structures, databases and software development.",like:"The hands-on side: turning a concept into something that actually runs. It’s also where I serve as NSS Social Media Head, so my college life has both code and content."},
+ {t:"Senior secondary, Commerce",o:"D.A.V. Public School, Sector 14, Gurugram",w:"2022 – 2024",sub:"Business and commerce, with a taste of entrepreneurship.",like:"The sports team (athletics, volleyball, football) and the Vocal Music Club, where all genres were welcome. School was where I learned that a good team and a good song can fix almost any day."}
+];
+const HOB=[
+ {big:1,t:"Athletics: my first love",p:"Track days were the best days. Nothing humbles and hypes you like a stopwatch. I loved it so much it landed me on my school’s sports team.",tags:["Sprints","Relays","Sports day legend (self-awarded)"]},
+ {t:"The rest of the squad",p:"If it has a ball or a shuttlecock, I’m probably in. Competitive? Ask my opponents.",tags:["Cricket","Badminton","Football","Volleyball"]},
+ {t:"Singing",p:"I was in my school’s Vocal Music Club, all genres welcome. If it has a melody, I’ll give it a go. Shower acoustics included.",tags:["All genres","Vocal Music Club"]},
+ {t:"Podcasts and random tutorials",p:"I love learning things I never planned to learn, especially the ones that test my patience and make me feel smart once I finally crack them. Yes, I will watch a long tutorial for a two-minute fix.",tags:["Knowledge binges","Patience training","Smart-making"]},
+ {t:"Business ideas, all the time",p:"In the shower, on the commute, mid-conversation: ideas show up uninvited. Some become projects (hello, Mintona). The rest wait politely in my head.",tags:["Ideating","Building","Repeat"]},
+ {big:0,wide:1,t:"Binge-watching (detective mode: ON)",shows:[["The Mentalist","A hero who solves cases by reading people. I love watching someone connect tiny clues that nobody else notices."],["Alice in Borderland","Survival games where every round is really a puzzle of logic and trust. I play along from the couch and lose to my own overthinking."],["If Wishes Could Kill","A thriller that keeps asking who you can trust. I love shows that make me guess, then guess again."]],p:"The shows that test my patience and my smartness, please. The kind that make you pause and say “wait, what?”."}
+];
+
+/* ---------- helpers ---------- */
+const reduce=matchMedia("(prefers-reduced-motion:reduce)").matches,coarse=matchMedia("(pointer:coarse)").matches;
+let calm=reduce;try{const c=localStorage.getItem("calm");if(c!==null)calm=c==="1"}catch(e){}
+const skills=a=>[a.p,...(a.s||[])].map(x=>`<span>${SKN[x]}</span>`).join("");
+$("#yr").textContent=new Date().getFullYear();
+$("#liBtn").href=ME.li;$("#liA").href=ME.li;$("#mailA").textContent=ME.email;$("#mailA").href="mailto:"+ME.email;$("#loc").textContent=ME.loc;
+
+/* nav + hub + proof + story */
+$("#links").innerHTML=PAGES.map(p=>`<a href="#${p[0]}" data-hover data-r="${p[0]}">${p[1]}</a>`).join("");
+$("#menu").innerHTML=PAGES.map(p=>`<a href="#${p[0]}" data-r="${p[0]}">${p[1]}</a>`).join("");
+$("#hub").innerHTML=HUB.map(h=>`<a class="tilt rv" href="#${h[0]}" data-hover><h3>${h[1]}</h3><p>${h[2]}</p><span class="go">Take me there →</span></a>`).join("");
+$("#proof").innerHTML=PROOF.map(p=>`<div class="tile rv"><span class="num" data-n="${p.n}" data-d="${p.d}" data-s="${p.s}">${p.n.toFixed(p.d)}${p.s}</span><b>${p.b}</b><small>${p.small}</small><span class="t">${p.t}</span></div>`).join("");
+$("#tl").innerHTML=STORY.map(c=>`<div class="chap rv"><span class="when">${c[0]}</span><h3>${c[1]}</h3><p>${c[2]}</p></div>`).join("");
+const stmt=$("#stmt");stmt.innerHTML="I turn ideas into things people use: AI tools, brands from scratch and audiences grown from zero. Somewhere between a BCA and a BBA, I decided to do both.".split(" ").map(w=>`<span class="w">${w}</span>`).join(" ");
+const words=$$("#stmt .w");
+
+/* projects pager */
+let pi=0;
+function renderProjects(){
+  const l=PROJ.slice(pi*3,pi*3+3),host=$("#plist");
+  host.innerHTML=l.map((p,i)=>`<article class="prow tilt" data-i="${i}"><div class="art">${artSvg(p)}</div><div class="pb"><span class="when">${p.w}</span><h3>${p.t}</h3><p class="lead">${p.lead}</p><div class="tg">${p.tags.map(t=>`<span>${t}</span>`).join("")}</div><div class="more-d"><div><div class="dl">${p.d.map(x=>`<div><h4>${x[0]}</h4><p>${x[1]}</p></div>`).join("")}</div></div></div><button type="button" class="btn alt tg-more" data-hover aria-expanded="false">View more</button></div></article>`).join("");
+  host.classList.remove("swap");void host.offsetWidth;host.classList.add("swap");
+  const pages=Math.ceil(PROJ.length/3);
+  $("#pnav").innerHTML=pages>1?`<button type="button" id="pup" aria-label="Previous projects" data-hover ${pi===0?"disabled":""}>↑</button><span>${pi*3+1}–${Math.min(PROJ.length,pi*3+3)} of ${PROJ.length}</span><button type="button" id="pdn" aria-label="More projects" data-hover ${pi>=pages-1?"disabled":""}>↓</button>`:"";
+}
+/* experience + certs with filters */
+const sel={x:new Set(),c:new Set()};
+const hit=(set,a)=>!set.size||set.has(a.p)||(a.s||[]).some(x=>set.has(x));
+function chips(host,items,key,render){
+  const ids=Object.keys(SKN).filter(k=>items.some(a=>a.p===k||(a.s||[]).includes(k)));
+  const set=sel[key];
+  host.innerHTML=`<button type="button" data-id="" data-hover aria-pressed="${!set.size}">All</button>`+ids.map(k=>`<button type="button" data-id="${k}" data-hover aria-pressed="${set.has(k)}">${SKN[k]}</button>`).join("")+`<span class="cnt" role="status"></span>`;
+  host.onclick=e=>{const b=e.target.closest("button");if(!b)return;const id=b.dataset.id;if(!id)set.clear();else if(set.has(id))set.delete(id);else set.add(id);chips(host,items,key,render);render()};
+}
+function renderXP(){
+  const l=EXP.filter(a=>hit(sel.x,a)).sort((a,b)=>(sel.x.has(a.p)?0:1)-(sel.x.has(b.p)?0:1));
+  $("#xl").innerHTML=l.map(a=>`<article class="xc rv in"><div><h3>${a.role}</h3><span class="org">${a.org}</span><span class="when">${a.kind} · ${a.w}</span></div><div><ul>${a.l.map(x=>`<li>${x}</li>`).join("")}</ul>${a.r?`<p class="res">${a.r}</p>`:""}<div class="tg" style="margin-top:12px">${skills(a)}</div></div></article>`).join("");
+  const c=$("#xchips .cnt");if(c)c.textContent=sel.x.size?`Showing ${l.length} of ${EXP.length}`:"";
+}
+function renderCerts(){
+  const l=CERT.filter(a=>hit(sel.c,a)).sort((a,b)=>(sel.c.has(a.p)?0:1)-(sel.c.has(b.p)?0:1));
+  $("#cg").innerHTML=l.map(a=>`<article class="cc"><h3>${a.t}</h3><span class="org">${a.o}</span><span class="when">${a.w}</span>${a.ov?`<p>${a.ov}</p>`:""}${a.k.length?`<div class="tg">${a.k.map(x=>`<span>${x}</span>`).join("")}</div>`:""}</article>`).join("");
+  const c=$("#cchips .cnt");if(c)c.textContent=sel.c.size?`Showing ${l.length} of ${CERT.length}`:"";
+}
+chips($("#xchips"),EXP,"x",renderXP);chips($("#cchips"),CERT,"c",renderCerts);renderXP();renderCerts();renderProjects();
+$("#el").innerHTML=EDU.map(e=>`<article class="ec rv"><div><h3>${e.t}</h3><span class="org">${e.o}</span><br><span class="when">${e.w}</span></div><div><h4>What I studied</h4><p>${e.sub}</p><h4>What I liked most</h4><p>${e.like}</p></div></article>`).join("");
+$("#hg").innerHTML=HOB.map(h=>`<article class="hc rv${h.big?" big":""}"${h.wide?' style="grid-column:1/-1"':""}><h3>${h.t}</h3><p>${h.p}</p>${h.tags?`<div class="tg">${h.tags.map(t=>`<span>${t}</span>`).join("")}</div>`:""}${h.shows?`<div class="shows">${h.shows.map(s=>`<p><b>${s[0]}:</b> ${s[1]}</p>`).join("")}</div>`:""}</article>`).join("");
+
+/* clicks */
+document.addEventListener("click",e=>{
+  const m=e.target.closest(".tg-more");
+  if(m){const r=m.closest(".prow"),o=r.classList.toggle("open");m.textContent=o?"View less":"View more";m.setAttribute("aria-expanded",o)}
+  if(e.target.closest("#pdn")){pi++;renderProjects()}
+  if(e.target.closest("#pup")){pi--;renderProjects()}
+  if(e.target.closest("#burger")){const o=$("#menu").classList.toggle("open");$("#burger").setAttribute("aria-expanded",o);$("#burger").textContent=o?"Close":"Menu"}
+  if(e.target.closest("#menu a"))closeMenu();
+});
+function closeMenu(){$("#menu").classList.remove("open");$("#burger").setAttribute("aria-expanded","false");$("#burger").textContent="Menu"}
+$("#toStory").addEventListener("click",e=>{e.preventDefault();$("#story").scrollIntoView({behavior:calm?"auto":"smooth"})});
+$("#skip").addEventListener("click",e=>{e.preventDefault();const t=$(".page.on .after");$("#main").focus({preventScroll:true});if(t)t.scrollIntoView({behavior:calm?"auto":"smooth"})});
+
+/* contact form (opens the visitor's email app) */
+$("#send").addEventListener("click",()=>{
+  const n=$("#fn").value.trim(),e=$("#fe").value.trim(),t=$("#ft").value.trim(),msg=$("#msg");
+  if(!t){msg.textContent="A blank message is bold, but I can’t read minds. Yet. Add a line?";return}
+  const body=`${t}\n\n— ${n||"Someone friendly"}${e?` (${e})`:""}`;
+  location.href=`mailto:${ME.email}?subject=${encodeURIComponent("Hello from your portfolio")}&body=${encodeURIComponent(body)}`;
+  msg.textContent="Your email app should pop up. If it doesn’t, the copy button has your back.";
+});
+$("#copy").addEventListener("click",async()=>{try{await navigator.clipboard.writeText(ME.email);$("#msg").textContent="Copied. Go forth and write something great."}catch(e){$("#msg").textContent="Copy didn’t work here, so it’s "+ME.email}});
+
+/* router with wipe transition */
+let cur=null,busy=false,pending=null;
+const route=()=>{const r=location.hash.slice(1);return PAGES.some(p=>p[0]===r)?r:null};
+function swap(r){
+  $$(".page").forEach(p=>p.classList.toggle("on",p.id==="p-"+r));cur=r;
+  $$("[data-r]").forEach(a=>a.getAttribute("data-r")===r?a.setAttribute("aria-current","page"):a.removeAttribute("aria-current"));
+  document.title=(r==="home"?"":PAGES.find(p=>p[0]===r)[1]+" · ")+"Manya Jain — Portfolio";
+  closeMenu();scrollTo(0,0);onScroll();
+}
+function go(r,first){
+  if(!r||r===cur)return;
+  if(first||calm||!Element.prototype.animate){swap(r);return}
+  if(busy){pending=r;return}
+  busy=true;const w=$("#wipe"),o={duration:420,easing:"cubic-bezier(.7,0,.2,1)",fill:"forwards"};
+  w.animate([{transform:"translateY(101%)"},{transform:"translateY(0)"}],o).onfinish=()=>{
+    swap(r);
+    w.animate([{transform:"translateY(0)"},{transform:"translateY(-101%)"}],o).onfinish=()=>{busy=false;w.getAnimations().forEach(a=>a.cancel());if(pending&&pending!==cur){const n=pending;pending=null;go(n)}else pending=null};
+  };
+}
+addEventListener("hashchange",()=>{const r=route();if(r)go(r)});
+
+/* scroll effects */
+const bar=$("#bar");
+function onScroll(){
+  const max=document.documentElement.scrollHeight-innerHeight;
+  bar.style.transform=`scaleX(${max>0?scrollY/max:0})`;
+  if(cur==="home"){const r=stmt.getBoundingClientRect(),p=Math.min(1,Math.max(0,(innerHeight*.9-r.top)/(innerHeight*.6)));words.forEach((w,i)=>w.classList.toggle("on",i/words.length<p*1.15))}
+}
+addEventListener("scroll",onScroll,{passive:true});addEventListener("resize",onScroll);
+if("IntersectionObserver" in window){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);const n=e.target.querySelector&&e.target.querySelector(".num");if(n)count(n)}}),{threshold:.15});
+  $$(".rv").forEach(el=>io.observe(el));
+}else $$(".rv").forEach(el=>el.classList.add("in"));
+function count(n){
+  if(calm)return;const T=+n.dataset.n,D=+n.dataset.d,S=n.dataset.s,t0=performance.now();
+  (function f(t){const k=Math.min(1,(t-t0)/1300),v=T*(1-Math.pow(1-k,3));n.textContent=v.toFixed(D)+S;if(k<1)requestAnimationFrame(f)})(t0);
+}
+
+/* pointer: cursor, glow, hero lens (drifts on its own when idle, so touch screens get it too) */
+const dot=$("#dot"),ring=$("#ring"),glow=$("#glow"),hero=$("#hero"),rev=$("#rev");
+let mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my,gx=mx,gy=my,hx=innerWidth*.3,hy=innerHeight*.5,thx=hx,thy=hy,hr=0,thr=0,last=0;
+const lens=()=>Math.min(190,innerWidth*.28);
+addEventListener("pointermove",e=>{mx=e.clientX;my=e.clientY;last=performance.now();if(!coarse&&!calm){dot.style.opacity=ring.style.opacity=1}
+  if(cur==="home"){const b=hero.getBoundingClientRect();if(e.clientY>=b.top&&e.clientY<=b.bottom){thx=e.clientX-b.left;thy=e.clientY-b.top;thr=lens()}}
+  const t=e.target.closest&&e.target.closest(".tilt");
+  if(t&&!coarse&&!calm){const r=t.getBoundingClientRect();t.style.setProperty("--ry",((e.clientX-r.left)/r.width-.5)*8+"deg");t.style.setProperty("--rx",(.5-(e.clientY-r.top)/r.height)*8+"deg")}
+},{passive:true});
+document.addEventListener("pointerout",e=>{const t=e.target.closest&&e.target.closest(".tilt");if(t){t.style.setProperty("--rx","0deg");t.style.setProperty("--ry","0deg")}});
+document.addEventListener("pointerover",e=>{ring.classList.toggle("big",!!(e.target.closest&&e.target.closest("[data-hover]")))});
+hero.addEventListener("pointerleave",()=>{thr=lens()*.6});
+function tick(t){
+  if(document.hidden){setTimeout(()=>requestAnimationFrame(tick),500);return}
+  rx+=(mx-rx)*.18;ry+=(my-ry)*.18;gx+=(mx-gx)*.05;gy+=(my-gy)*.05;
+  dot.style.transform=`translate(${mx}px,${my}px)`;ring.style.transform=`translate(${rx}px,${ry}px)`;glow.style.transform=`translate(${gx}px,${gy}px)`;
+  if(cur==="home"){
+    if(t-last>2500){const w=hero.clientWidth,h=hero.clientHeight;thx=w*(.5+.3*Math.sin(t/1700));thy=h*(.55+.18*Math.cos(t/1300));thr=lens()}
+    hx+=(thx-hx)*.14;hy+=(thy-hy)*.14;hr+=(thr-hr)*.08;
+    rev.style.setProperty("--x",hx+"px");rev.style.setProperty("--y",hy+"px");rev.style.setProperty("--r",hr+"px");
+  }
+  requestAnimationFrame(tick);
+}
+$("#hint").textContent=coarse?"tap and drag across the name, the page has a secret":"move your pointer around, the page has a secret";
+
+/* effects switch */
+function setCalm(v){calm=v;document.documentElement.toggleAttribute("data-calm",v);$("#calm").textContent=v?"Bring the fun back":"Calm mode";try{localStorage.setItem("calm",v?"1":"0")}catch(e){}}
+$("#calm").addEventListener("click",()=>setCalm(!calm));setCalm(calm);
+
+go(route()||"home",true);
+if(!route()){try{history.replaceState(null,"","#home")}catch(e){}}
+onScroll();requestAnimationFrame(tick);
+</script>
+</body>
+</html>
