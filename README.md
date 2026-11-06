@@ -1,5 +1,5 @@
 <div align="center">
-# 👋 Hi, I'm Manya Jain
+👋 Hi, I'm Manya Jain
 
 ### AI builder · brand-grower · professional over-thinker (the useful kind)
 
@@ -221,8 +221,6 @@ I'm always up for a new project, a collaboration or a good conversation about AI
 <div align="center">
 
 [**🌐 manyajain.netlify.app**](https://manyajain.netlify.app) · [**💼 LinkedIn**](https://www.linkedin.com/in/manya-j) · [**✉️ manyajain3690@gmail.com**](mailto:manyajain3690@gmail.com)
-
-📍 Gurugram, Haryana, India
 
 <sub>Made by Manya, with a lot of curiosity and slightly too many browser tabs. ⭐ Star the repo if it made you smile.</sub>
 
