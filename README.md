@@ -1,5 +1,4 @@
 <div align="center">
-
 # 👋 Hi, I'm Manya Jain
 
 ### AI builder · brand-grower · professional over-thinker (the useful kind)
@@ -8,13 +7,6 @@
 This repo is the website that tells the rest of the story.
 
 [**🌐 Visit the live site**](https://manyajain.netlify.app) · [**💼 LinkedIn**](https://www.linkedin.com/in/manya-j) · [**✉️ Say hi**](mailto:manyajain3690@gmail.com)
-
-![HTML](https://img.shields.io/badge/HTML-single%20file-ff6b5b?style=flat-square)
-![CSS](https://img.shields.io/badge/CSS-hand--written-14152e?style=flat-square)
-![JavaScript](https://img.shields.io/badge/JavaScript-vanilla-7ee8c4?style=flat-square)
-![Frameworks](https://img.shields.io/badge/frameworks-zero-ff6b5b?style=flat-square)
-![Netlify](https://img.shields.io/badge/hosted%20on-Netlify-14152e?style=flat-square)
-
 </div>
 
 ---
@@ -220,15 +212,7 @@ The whole site is **one HTML file**: no React, no frameworks and no build step. 
 
 ## 🚀 Run it yourself
 
-No installs needed. Clone the repo and open `public/index.html` in a browser.
-
-Want a local server instead?
-
-```bash
-npx serve public
-```
-
----
+Clone the repo and open `public/index.html` in a browser.
 
 ## 💬 Let's talk
 
